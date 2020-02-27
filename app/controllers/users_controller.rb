@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = if params[:email]
+               User.where("email like :email", email: "#{params[:email]}%")
+             else
+               User.all
+             end
   end
 
   # GET /users/1
