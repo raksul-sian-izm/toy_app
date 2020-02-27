@@ -2,6 +2,12 @@
 
 <h1>Users</h1>
 
+<%= form_with(url: '/users', method: "get") do %>
+  <%= label_tag(:email, "Search by email:") %>
+  <%= text_field_tag(:email) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <table>
   <thead>
     <tr>
