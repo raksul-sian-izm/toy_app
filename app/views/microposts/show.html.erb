@@ -7,7 +7,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @micropost.user_id %>
+  <%= @micropost.user.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @micropost.category.content %>
 </p>
 
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |

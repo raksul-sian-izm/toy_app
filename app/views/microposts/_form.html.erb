@@ -21,6 +21,10 @@
     <%= form.number_field :user_id %>
   </div>
 
+  <div class="fied">
+    <%= form.collection_select(:category_id, Category.all, :id, :content, prompt: false) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
