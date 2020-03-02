@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  <strong>Desctiption:</strong>
+  <% @micropost.desc_images.each do |desc_img| %>
+    <%= image_tag desc_img.variant(resize_to_limit: [100, 100]) %>
+  <% end %>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @micropost.user_id %>
 </p>
