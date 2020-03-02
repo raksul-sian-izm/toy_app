@@ -21,7 +21,7 @@
             <%= image_tag desc_img.variant(resize_to_limit: [100, 100]) %>
           <% end %>
         </td>
-        <td><%= micropost.user_id %></td>
+        <td><%= image_tag micropost.user.avatar.variant(resize_to_limit: [100, 100]) if micropost.user.avatar.attached?%></td>
         <td><%= link_to 'Show', micropost %></td>
         <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
         <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
