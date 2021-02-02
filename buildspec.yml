@@ -5,10 +5,7 @@ phases:
       python: 3.8
   build:
     commands:
-      - echo build package for assets...
-      - mkdir dist
-      - cp -r *.html manifest.json service-worker.js images dist/
-      - echo build package for lambda function...
+      - echo call sam function
       - sam build
       - sam package --s3-bucket $LAMBDA_BUCKET_NAME --output-template-file packaged-template.yml
 artifacts:
@@ -16,7 +13,7 @@ artifacts:
     assets:
       base-directory: dist
       files:
-        - '**/*'
+        - "**/*"
     template:
       files:
         - packaged-template.yml
